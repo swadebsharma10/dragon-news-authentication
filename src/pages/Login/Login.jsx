@@ -1,11 +1,16 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Header from "../../SharedPages/Header/Header";
 
 
 const Login = () => {
   const {signInUser} = useContext(AuthContext);
+  
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  console.log('location in login', location);
 
   const handleLogin =(event) =>{
       event.preventDefault();
@@ -19,7 +24,13 @@ const Login = () => {
       .then(res =>{
         const user = res.user;
         console.log('logged user', user);
-        alert('User logged successfully')
+        alert('User logged successfully');
+
+        // navigate after login user
+        navigate(location?.state ? location.state : '/')
+
+
+
       })
       .catch(error =>{
         console.log(error.message)
