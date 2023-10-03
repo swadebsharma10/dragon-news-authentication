@@ -6,7 +6,7 @@ import qZone2 from '../../assets/qZone3.png';
 
 const RightSiteNav = () => {
   return (
-    <section className=" m-4">
+    <section className="">
       <div className="space-y-4 mb-5 border p-3 rounded">
       <h3 className="text-2xl font-bold">Login With </h3>
         <button className="btn btn-outline w-full">
