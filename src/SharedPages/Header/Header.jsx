@@ -32,7 +32,7 @@ const Header = () => {
     </>
 
     return (
-        <div>
+        <div className="mb-8">
         <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
